@@ -15,6 +15,10 @@ body {
 }
 
 h1 {
+    margin-bottom: 10px;
+}
+
+h2 {
     margin-bottom: 20px;
 }
 
@@ -28,6 +32,7 @@ button {
     background-color: #4facfe;
     color: white;
     cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
@@ -41,4 +46,13 @@ button:hover {
 
 .hidden {
     display: none;
+}
+
+/* Pantalla de inicio */
+#start-screen h1 {
+    font-size: 26px;
+}
+
+#start-screen h2 {
+    color: #4facfe;
 }
