@@ -29,11 +29,24 @@ const questions = [
 let currentQuestion = 0;
 let score = 0;
 
+// Elementos
+const startScreen = document.getElementById("start-screen");
+const quizScreen = document.getElementById("quiz");
+const resultScreen = document.getElementById("result");
+
 const questionEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
 const feedbackEl = document.getElementById("feedback");
 const nextBtn = document.getElementById("nextBtn");
 
+// Iniciar quiz
+function startQuiz() {
+    startScreen.classList.add("hidden");
+    quizScreen.classList.remove("hidden");
+    loadQuestion();
+}
+
+// Cargar pregunta
 function loadQuestion() {
     feedbackEl.textContent = "";
     const q = questions[currentQuestion];
@@ -48,6 +61,7 @@ function loadQuestion() {
     });
 }
 
+// Revisar respuesta
 function checkAnswer(selected) {
     const correct = questions[currentQuestion].answer;
     if (selected === correct) {
@@ -58,6 +72,7 @@ function checkAnswer(selected) {
     }
 }
 
+// Siguiente
 nextBtn.onclick = () => {
     currentQuestion++;
     if (currentQuestion < questions.length) {
@@ -67,12 +82,10 @@ nextBtn.onclick = () => {
     }
 };
 
+// Resultado final
 function showResult() {
-    document.getElementById("quiz").classList.add("hidden");
-    document.getElementById("result").classList.remove("hidden");
+    quizScreen.classList.add("hidden");
+    resultScreen.classList.remove("hidden");
     document.getElementById("score").textContent =
         `Tu puntaje fue: ${score} / ${questions.length}`;
 }
-
-// Iniciar
-loadQuestion();
