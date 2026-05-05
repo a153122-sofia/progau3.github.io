@@ -13,6 +13,16 @@ const questions = [
         question: "¿Cuántos pulmones tiene el ser humano?",
         options: ["1", "2", "3", "4"],
         answer: "2"
+    },
+    {
+        question: "¿Qué órgano bombea la sangre?",
+        options: ["Pulmón", "Hígado", "Corazón", "Riñón"],
+        answer: "Corazón"
+    },
+    {
+        question: "¿Cuál es el órgano más grande del cuerpo?",
+        options: ["Cerebro", "Piel", "Hígado", "Pulmón"],
+        answer: "Piel"
     }
 ];
 
@@ -41,10 +51,10 @@ function loadQuestion() {
 function checkAnswer(selected) {
     const correct = questions[currentQuestion].answer;
     if (selected === correct) {
-        feedbackEl.textContent = " Correcto";
+        feedbackEl.textContent = "✅ Correcto";
         score++;
     } else {
-        feedbackEl.textContent = "Incorrecto";
+        feedbackEl.textContent = "❌ Incorrecto";
     }
 }
 
